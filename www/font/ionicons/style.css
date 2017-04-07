@@ -1,0 +1,309 @@
+body{background: #EEEEEE;
+font-family: 'Lato', sans-serif;}
+.clear{clear:both;}
+p{margin: 0px;}
+a,button{outline: none;}
+a:active {color: white;}
+ul{list-style: none;}
+.pad0{padding: 0px;}
+.pad8{padding: 8px;}
+.logo {text-align: center;margin: 50px 0px;float: left;width: 100%;}
+.login-form {float: left;width: 100%;}
+.login-heading {margin-bottom: 40px;}
+.login-heading h4 {margin-top: 0px;font-family: 'Lato', sans-serif;font-weight: 600;
+    color: #403C3C;}
+
+.login-feild .form-group {position: relative;margin-bottom: 40px;}
+
+.login-feild .form-group input {    font-size: 13px;
+    padding: 0px 10px 0px 35px;
+    width: 100%;
+    height: 39px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+
+.login-feild .login-input:before {content: "";position: absolute;bottom: 0;height: 8px;width: 1px;background: gray;}
+.login-feild .login-input:after {content: "";position: absolute;right: 0;bottom: 0;height: 8px;width: 1px;background: gray;}
+.login-feild .form-group i {
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    font-size: 21px;
+    color: #989696;
+}
+.login-feild .form-group button {width: 100%;background: red;border: none;color: white;font-size: 17px;border-radius: 40px;padding: 10px;margin-top: 10px;
+}
+.footer-login{text-align: center;}
+.footer-login p a {
+            color: red;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.white-box{box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .05), 0 1px 4px 0 rgba(0, 0, 0, .08), 0 3px 1px -2px rgba(0, 0, 0, .2);background: white;padding: 12px; margin-bottom: 10px;    float: left;
+    width: 100%;}
+
+.forgot-password {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.84);
+    display: none;
+}
+
+.forgot-main {
+    position: relative;
+    top: 37%;
+        margin: 0px 20px;
+}
+.forgot-password-inner {
+            background: white;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+    max-width: 500px;
+    position: relative;
+}
+.forgot-heading h4 {
+    margin-top: 0px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    color: #403C3C;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: inline-block;
+    position: relative;
+}
+
+.forgot-heading {
+        text-align: center;
+    padding-top: 41px;
+}
+.forgot-password-inner button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    position: absolute;
+    right: 8px;
+    top: 0px;
+        outline: none;
+}
+
+.forgot-heading h4:after {content: "";position: absolute;bottom: -8px;width: 24px;height: 2px;background: red;left: 0;right: 0;margin: 0 auto;}
+.hrms-login {
+    text-align: center;
+    padding: 10px 0px;
+    color: #666;
+    font-size: 15px;
+    border-top: 1px solid gray;
+    margin-top: 20px;
+}
+
+.top-strip {
+        background: #2B2B2B;
+    height: 26px;
+}
+
+.header {
+    background: #373737;
+    position: relative;
+    float: left;
+    width: 100%;
+
+}
+
+.page-name {
+    float: left;
+    margin-top: 11px;
+}
+
+.page-name p {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+.menu-icon{    color: white;
+    font-size: 28px;
+    margin-left: 11px;
+    float: left;
+    margin-right: 16px;
+margin-top: 2px;}
+
+.noti-more li {
+      float: left;
+      /* padding: 7px 14px 7px 9px; */
+}
+
+.noti-more {
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+.noti-more li a {
+    color: white;
+    font-size: 27px;
+    position: relative;
+    padding: 0px 14px 0px 14px;
+    display: block;
+    margin-right: 14px;
+}
+
+.noti-more li a span {
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    background: red;
+    text-align: center;
+    border-radius: 100%;
+    border: 1px solid white;
+    line-height: 12px;
+}
+
+.common-heading {
+    margin-bottom: 15px;
+}
+.common-heading p {
+    font-size: 16px;
+        color: black;
+}
+
+.add-account-form .form-control {
+    border-radius: 0px;
+    border: 1px solid #C1C1C1;
+    box-shadow: none;
+}
+
+.add-account-form .form-control.birthdate {
+    width: 90%;
+        display: inline-block;
+}
+
+a.add-input i {
+    font-size: 23px;
+    position: relative;
+    top: 4px;
+    left: 6px;
+    color: red;
+}
+
+.save-close-btn button {
+    width: 132px;
+    padding: 10px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+        border-radius: 4px;
+}
+.save-close-btn {
+    text-align: center;
+}
+
+.save-close-btn button:first-child {
+    background: red;
+    margin-right: 7px;
+}
+
+.save-close-btn button:last-child {
+    background: #313030;
+}
+
+.noti-more ul.dropdown-menu {
+    right: 2px;
+    left: inherit;
+    width: 137px;
+    border-radius: 0px;
+    top: 0px;
+    padding: 0;
+}
+
+.noti-more ul.dropdown-menu li a {
+        color: #616060;
+    font-size: 14px;
+    border-bottom: 1px solid #EEEEEE;
+    display: block;
+    padding: 7px;
+}
+
+.noti-more ul.dropdown-menu li {
+    width: 100%;
+    padding: 0px;
+}
+
+.noti-more ul.dropdown-menu li a i {
+    margin-right: 5px;
+    vertical-align: middle;
+    color: black;
+}
+
+.notification-img {
+        float: left;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    margin-right: 10px;
+    line-height: 65px;
+}
+
+.notification-img img {
+    width: 100%;
+}
+
+.notificaiton-text {
+    overflow: hidden;
+}
+
+.notificaiton-text h4 {
+    margin-top: 0;
+    margin-bottom: 7px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.notificaiton-text p {
+    font-size: 13px;
+    color: #4E4E4E;
+}
+
+.noti-date-time {
+    float: left;
+    width: 100%;
+    margin-top: 14px;
+    border-top: 1px solid #CFCFCF;
+    padding-top: 6px;
+}
+
+.noti-date-time p:first-child {
+    float: left;
+}
+
+.noti-date-time p:last-child {
+    float: right;
+}
+.noti-date-time p i {
+    font-size: 18px;
+    vertical-align: -2px;
+    margin-right: 5px;
+}
+
+.noti-date-time p {
+    font-size: 13px;
+    color: gray;
+}
+
+.top-menu {
+    float: left;
+    width: 100%;
+    padding: 5px 0px;
+}

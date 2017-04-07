@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "723289405962",
+    "firebase_url": "https://hdfc-3f59f.firebaseio.com",
+    "project_id": "hdfc-3f59f",
+    "storage_bucket": "hdfc-3f59f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723289405962:android:7e22e4728554cf2d",
+        "android_client_info": {
+          "package_name": "com.hdfc.sodbApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723289405962-joetk7ftea0bieq0uhjedbrm58dqkhte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJS0AuRhG8L9DNqFl1_b9pJLYoGkY_5JE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

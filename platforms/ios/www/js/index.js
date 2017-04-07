@@ -47,12 +47,42 @@ app.initialize();
 
 function cameraTakePicture() {
     
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-                                destinationType: Camera.DestinationType.DATA_URL
-                                });
+    setTimeout(getTheToken, 1000);
+//    
+//    FCMPlugin.getToken(function(token){
+//                       alert(token);
+//                       });
+    
+//    FCMPlugin.onTokenRefresh(function(token){
+//                             alert( token );
+//                             });
+    
+//    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+//                                destinationType: Camera.DestinationType.DATA_URL
+//                                });
     
     
 }
+
+
+
+function getTheToken() {
+    FCMPlugin.getToken(
+                       function (token) {
+                       if (token == null) {
+                       console.log("null token");
+                       setTimeout(getTheToken, 1000);
+                       } else {
+                       alert(token);
+                       console.log("I got the token: " + token);
+                       }
+                       },
+                       function (err) {
+                       console.log('error retrieving token: ' + err);
+                       }
+                       );
+}
+
 function onSuccess(imageData) {
     var image = document.getElementById('myImage');
     image.src = "data:image/jpeg;base64," + imageData;

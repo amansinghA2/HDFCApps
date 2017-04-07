@@ -25,6 +25,13 @@ ul{list-style: none;}
     outline: none;
 }
 
+<style type="text/css">
+*:not(input):not(textarea) {
+    -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+    -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+}
+</style>
+
 .login-feild .login-input:before {content: "";position: absolute;bottom: 0;height: 8px;width: 1px;background: gray;}
 .login-feild .login-input:after {content: "";position: absolute;right: 0;bottom: 0;height: 8px;width: 1px;background: gray;}
 .login-feild .form-group i {
@@ -307,3 +314,12 @@ a.add-input i {
     width: 100%;
     padding: 5px 0px;
 }
+
+/*New css*/
+.mg-top-83{margin-top: 83px;}
+.header{
+    position: fixed;
+    top:0; left:0;
+    width: 100%;
+    z-index: 9999; }
+

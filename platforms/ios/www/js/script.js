@@ -64,7 +64,14 @@ function removeStorageData(key) {
     return storage.removeItem(key);
 }
 
-
+//$(window).scroll(function(){
+//                 if ($(window).scrollTop() >= 20) {
+//                 $('.header').addClass('fixed-header');
+//                 }
+//                 else {
+//                 $('.header').removeClass('fixed-header');
+//                 }
+//                 });
 
 
 

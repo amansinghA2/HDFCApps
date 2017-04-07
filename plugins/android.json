@@ -12,6 +12,12 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.example.HDFC"
+        },
+        "cordova-plugin-ios-longpress-fix": {
+            "PACKAGE_NAME": "com.example.HDFC"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.example.HDFC"
         }
     },
     "dependent_plugins": {

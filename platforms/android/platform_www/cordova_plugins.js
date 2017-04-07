@@ -31,6 +31,14 @@ module.exports = [
         "clobbers": [
             "CameraPopoverHandle"
         ]
+    },
+    {
+        "id": "cordova-plugin-fcm.FCMPlugin",
+        "file": "plugins/cordova-plugin-fcm/www/FCMPlugin.js",
+        "pluginId": "cordova-plugin-fcm",
+        "clobbers": [
+            "FCMPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -38,7 +46,9 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.3.2",
     "cordova-plugin-compat": "1.1.0",
-    "cordova-plugin-camera": "2.4.0"
+    "cordova-plugin-camera": "2.4.0",
+    "cordova-plugin-ios-longpress-fix": "1.1.0",
+    "cordova-plugin-fcm": "2.1.1"
 };
 // BOTTOM OF METADATA
 });

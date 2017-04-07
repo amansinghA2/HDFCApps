@@ -7,12 +7,18 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.example.HDFC"
-        },
         "cordova-plugin-camera": {
             "CAMERA_USAGE_DESCRIPTION": " ",
             "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.example.HDFC"
+        },
+        "cordova-plugin-ios-longpress-fix": {
+            "PACKAGE_NAME": "com.example.HDFC"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.HDFC"
+        },
+        "cordova-plugin-fcm": {
             "PACKAGE_NAME": "com.example.HDFC"
         }
     },

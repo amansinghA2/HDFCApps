@@ -1,83 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>HDFC Sales - Login</title>
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="font/ionicons/ionicons.css" rel="stylesheet" type="text/css"/>
-
-    <!--google font-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,500,700,900&Lato:300,300i,400,700" rel="stylesheet">
-</head>
-<body>
-
-<div class="container-fluid">
-
-    <div class="logo">
-        <img src="img/logo.png">
-    </div>
-
-    <div class="login-form">
-        <div class="login-heading"><h4>Sign in</h4></div>
-    </div><!--login-form-->
-    <div class="clear"></div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="login-feild">
-                
-<!--                <button id="cameraTakePicture" onclick="cameraTakePicture()">TAKE PICTURE</button>-->
-<!--                <img id="myImage"></img>-->
-                
-                <div class="form-group login-input">
-                    <input type="text" placeholder="Employee ID" name="username" required="required" class="login-data">
-                    <i class="icon ion-person"></i>
-                </div>
-
-                <div class="form-group login-input">
-                    <input type="password" placeholder="Password" name="password" required="required" class="login-data">
-                    <i class="icon ion-locked"></i>
-                </div>
-
-                <div class="form-group">
-                    <button type="button" class="login-btn">Login</button>
-                </div>
-            </div><!--login-feild-->
-            <div class="footer-login">
-                <p><a href="javascript:void(0)" id="forgot-btn">Forgot Password</a></p>
-            </div>
-            <div class="forgot-password">
-                <div class="forgot-main">
-                    <div class="forgot-password-inner">
-                        <button class="close-forgot"><i class="icon ion-android-close"></i></button>
-                        <div class="forgot-heading"><h4>Forgot Password</h4></div>
-                        <div class="hrms-login"><p>Please login to your HRMS</p></div>
+    <head>
+        <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+                    <title>HDFC Sales - Login</title>
+                    
+                    <!-- Bootstrap -->
+                    <link href="css/bootstrap.min.css" rel="stylesheet">
+                        <link href="css/style.css" rel="stylesheet">
+                            <link href="font/ionicons/ionicons.css" rel="stylesheet" type="text/css"/>
+                            
+                            <!--google font-->
+                            <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,500,700,900&Lato:300,300i,400,700" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid">
+            
+            <div class="logo">
+                <img src="img/logo.png">
                     </div>
+            
+            <div class="login-form">
+                <div class="login-heading"><h4>Sign in</h4></div>
+            </div><!--login-form-->
+            <div class="clear"></div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="login-feild">
+                        
+                                        <button id="cameraTakePicture" onclick="cameraTakePicture()">TAKE PICTURE</button>
+                                        <img id="myImage"></img>
+                        
+                        <div class="form-group login-input">
+                            <input type="text" placeholder="Employee ID" value="14570" name="username" required="required" class="login-data">
+                                <i class="icon ion-person"></i>
+                                </div>
+                        
+                        <div class="form-group login-input">
+                            <input type="password" placeholder="Password" name="password" value="pass123" required="required" class="login-data">
+                                <i class="icon ion-locked"></i>
+                                </div>
+                        
+                        <div class="form-group">
+                            <button type="button" class="login-btn">Login</button>
+                        </div>
+                    </div><!--login-feild-->
+                    <div class="footer-login">
+                        <p><a href="javascript:void(0)" id="forgot-btn">Forgot Password</a></p>
+                    </div>
+                    <div class="forgot-password">
+                        <div class="forgot-main">
+                            <div class="forgot-password-inner">
+                                <button class="close-forgot"><i class="icon ion-android-close"></i></button>
+                                <div class="forgot-heading"><h4>Forgot Password</h4></div>
+                                <div class="hrms-login"><p>Please login to your HRMS</p></div>
+                            </div>
+                        </div>
+                    </div><!--forgot-password-->
                 </div>
-            </div><!--forgot-password-->
-        </div>
-    </div>
-
-</div><!--container-fluid-->
-
-<!-- cordova script (this will be a 404 during development) -->
-
-<script src="js/jquery.min.js"></script>
-<script src="cordova.js"></script>
-<script src="js/ng-cordova.min.js"></script>
-<script src="js/index.js"></script>
-<script src="js/script.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/DateTimePicker.js"></script>
-<script src="js/jPushMenu.js"></script>
-<script src="js/DateTimePicker.js"></script>
-
-
-</body>
+            </div>
+            
+        </div><!--container-fluid-->
+        
+        <!-- cordova script (this will be a 404 during development) -->
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/ng-cordova.min.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        
+    </body>
 </html>

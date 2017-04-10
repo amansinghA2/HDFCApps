@@ -11,7 +11,7 @@ $(document).ready(function () {
         $(".forgot-password").fadeOut(100);
     });
 
-    $('.number').on('keydown', function (e) {
+    $('form').on('keydown', '.number', function (e) {
         -1 !== $.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190])
         || /65|67|86|88/.test(e.keyCode)
         && (!0 === e.ctrlKey || !0 === e.metaKey)

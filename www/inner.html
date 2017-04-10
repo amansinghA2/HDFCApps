@@ -27,7 +27,16 @@
 
 </head>
 <body>
+<!--<div class="notification error">
+    <div class="notifi-icon"><i class="icon ion-alert-circled"></i></div>
+    <span class="message">You have met error in this process</span>
+</div>
 
+<div class="notification success">
+    <div class="notifi-icon"><i class="icon ion-ios-checkmark"></i></div>
+    <span class="message">You are successful install file</span>
+</div>
+-->
 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
     <h3>Menu</h3>
     <a href="#">Celery seakale</a>
@@ -46,14 +55,17 @@
             <a href="#" class="menu-icon toggle-menu menu-left"><i class="icon ion-android-menu"></i></a>
             <div class="page-name"><p>Notification</p></div>
             <ul class="noti-more">
-                <li><a href="#"><i class="icon ion-android-notifications"></i><span class="notification-count">2</span></a>
+                <li>
+                    <a id="notify_link" href="javascript:void(0)"><i class="icon ion-android-notifications"></i>
+                        <span class="notification-count">0</span>
+                    </a>
                 </li>
             </ul>
         </div>
     </div><!--header-->
 </div>
-
-<div class="container-fluid pad8">
+<input type="hidden" id="message">
+<div class="container-fluid pad8 main">
     <form action="#" method="post" id="so_form">
         <div class="white-box">
             <div class="common-heading">
@@ -127,7 +139,8 @@
 
                     <div class="col-md-4 col-sm-4">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Contact No*" name="key_person_contact"
+                            <input type="text" class="form-control number" placeholder="Contact No*"
+                                   name="key_person_contact" maxlength="10"
                                    required>
                         </div>
                     </div>
@@ -151,13 +164,14 @@
                     <div class="add-account-form">
                         <div class="col-md-4 col-sm-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name*" name="contacts[0][name]">
+                                <input type="text" class="form-control" placeholder="Name*" name="contacts[0][name]"
+                                       required>
                             </div>
                         </div>
 
                         <div class="col-md-4 col-sm-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Contact No*"
+                                <input type="text" class="form-control number" placeholder="Contact No*" required
                                        name="contacts[0][contact]">
                             </div>
                         </div>
@@ -210,13 +224,16 @@
                         <div class="form-group">
                             <select class="form-control" name="state" id="state" onchange="getCities()">
                                 <!--Appending data via ajax-->
+                                <option value="">-- Select State --</option>
                             </select>
+                            <input type="hidden" id="state_id">
                         </div>
                     </div>
 
                     <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                             <select class="form-control" name="city" id="city">
+                                <option value="">-- Select City --</option>
                                 <!--Appending data via ajax-->
                             </select>
                         </div>
@@ -224,7 +241,8 @@
 
                     <div class="col-md-4 col-sm-4">
                         <div class="form-group">
-                            <input type="text" class="form-control number" maxlength="6" placeholder="Pin Code*">
+                            <input type="text" class="form-control number" name="pincode" maxlength="6"
+                                   placeholder="Pin Code*">
                         </div>
                     </div>
 
@@ -234,7 +252,7 @@
 
         <div class="white-box">
             <div class="save-close-btn">
-                <button type="button" onclick="saveFormData($(this))">Save & Close</button>
+                <button id="save_close">Save & Close</button>
                 <button>Cancel</button>
             </div>
         </div>
@@ -243,8 +261,8 @@
 
 
 <script src="js/jquery.min.js"></script>
-
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/DateTimePicker.js"></script>
 <script type="text/javascript" src="js/jPushMenu.js"></script>
 <script src="js/script.js"></script>
@@ -254,6 +272,10 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
+        checkSession(getStorageData('session_id'));
+
+        getStates();
+
         $("#dtBox").DateTimePicker({
             dateFormat: "dd-MMM-yyyy"
         });

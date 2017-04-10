@@ -1,4 +1,5 @@
-var MAIN_URL = 'http://digiroltest.com/hdfcdata/v1.0/',
+//var MAIN_URL = 'http://digiroltest.com/hdfcdata/v1.0/',
+var MAIN_URL = 'http://localhost/hdfcdata/',
     API_URL = MAIN_URL + 'Hdfcapi/',
     LOGIN_URL = API_URL + 'login',
     CURRENT_URL = window.location.href,
@@ -6,19 +7,13 @@ var MAIN_URL = 'http://digiroltest.com/hdfcdata/v1.0/',
 
 $ = jQuery.noConflict();
 $(document).ready(function () {
-    var currentPage = getPageName(CURRENT_URL);
-    if (currentPage === 'inner') {
-        getStates();
-    }
-    if ((currentPage === '' || currentPage === 'index') && getStorageData('session_id') !== null) {
-        redirect('inner.html');
+    if (getPageName(CURRENT_URL) !== 'index') {
+        setTimeout(notification, 1000);
     }
 
-    if (currentPage === 'inner' && !getStorageData('session_id')) {
-        redirect('index.html');
-    }
-
-
+    $('#notify_link').click(function () {
+        $('.main').load('notification.html')
+    });
     $(".login-btn").on("click", function (e) {
         $this = $(this);
         var data = $(".login-data").serialize();
@@ -47,11 +42,50 @@ $(document).ready(function () {
     });
 
     $(".logout-btn").on("click", function (e) {
-        removeStorageData('session_id');
-        redirect('index.html');
+        var session_id = getStorageData('session_id');
+        sendRequest(API_URL + 'logout', {'session_log': session_id})
+            .done(function (response) {
+                if (response.status === 1) {
+                    $('#message').val(response.message);
+                    removeStorageData('session_id');
+                    redirect('index.html');
+                }
+            })
+            .error(function (error) {
+                alert(error.responseText);
+            });
     });
 
+    $('#so_form').submit(function (e) {
+        e.preventDefault();
+        var $form = $(this),
+            session_id = getStorageData('session_id');
 
+        if (!$form.validate()) return false;
+
+        var arr = $form.serializeArray();
+        var formData = {};
+        $.each(arr, function (i, each) {
+            formData[each.name] = each.value;
+        });
+        formData['session_id'] = session_id;
+
+        sendRequest(API_URL + 'set_contact', formData).done(function (response) {
+            if (response.status === 0) {
+                alert(response.message);
+            }
+            if (response.status === 1) {
+                alert(response.message);
+            }
+            if (response.status === -1) {
+                alert(response.message);
+                removeStorageData('session_id');
+                redirect('index.html');
+            }
+        }).error(function (error) {
+            alert(error.reposnseText);
+        });
+    });
 });
 
 
@@ -64,7 +98,13 @@ function getPageName(url) {
 
 function changeButtonTextValue($btn, value) {
     $btn.text(value);
+}
 
+function disableElement(element) {
+    element.attr('disabled', true);
+}
+function enableElement(element) {
+    element.removeAttr('disabled');
 }
 function getStorageData(key) {
     var storage = window.localStorage;
@@ -82,24 +122,35 @@ function redirect(url) {
     window.location.replace(url);
 }
 
+
+function checkSession(session_id) {
+    sendRequest(API_URL + 'session_exist', {session_id: session_id}, 'html')
+        .done(function (response) {
+            if (response == 0) {
+                removeStorageData('session_id');
+                redirect('index.html');
+            }
+
+        })
+        .error(function (error) {
+            alert(error.responseText);
+        });
+}
+
 /**
  *
- * @param urlToCall             Ajax call url
- * @param urlToRedirect         Redirect Url after success
+ * @param urlToCall
  * @param data
- * @param element
- * @param btnTextBefore
- * @param btnTextAfter
  * @param datatype
- * @returns {boolean}
+ * @returns {*}
  */
-var sendRequest = function (urlToCall, data, element, btnTextBefore, btnTextAfter, urlToRedirect, datatype) {
+var sendRequest = function (urlToCall, data, datatype) {
 
     return $.ajax({
         url     : urlToCall,
         type    : 'post',
         dataType: typeof (datatype) !== 'undefined' ? datatype : 'json',
-        data    : typeof (data) !== 'undefined' ? data : '',
+        data    : typeof (data) !== 'undefined' ? data : ''
         /* beforeSend: function () {
          if (element) {
          changeButtonTextValue(element, btnTextBefore);
@@ -144,33 +195,11 @@ function enable(value) {
     }
 }
 
-function saveFormData(element) {
-    var formData = $('#so_form').serialize();
-    changeButtonTextValue(element, 'Submitting...');
-    sendRequest(API_URL + 'set_contact', {data: formData}).done(function (response) {
-        if (response.status === 0) {
-            alert(response.message);
-        }
-        if (response.status === 1) {
-            alert(response.message);
-            redirect('')
-        }
-        if (response.status === -1) {
-            alert(response.message);
-            removeStorageData('session_id');
-            redirect('index.html');
-        }
-        changeButtonTextValue(element, 'Save & Close');
-    }).error(function (error) {
-        alert(error.reposnseText);
-        changeButtonTextValue(element, 'Save & Close');
-    });
-}
 var row = 1;
 function addRow() {
     var $html = '<div class="row" id="row_' + row + '"><div class="add-account-form">';
     $html += '<div class="col-md-4 col-sm-4"><div class="form-group"><input type="text" class="form-control" placeholder="Name*" name="contacts[' + row + '][name]" required></div></div>';
-    $html += '<div class="col-md-4 col-sm-4"><div class="form-group"><input type="text" class="form-control" placeholder="Contact No*" name="contacts[' + row + '][contact]" required></div></div>';
+    $html += '<div class="col-md-4 col-sm-4"><div class="form-group"><input type="text" class="form-control number" maxlength="10" placeholder="Contact No*" name="contacts[' + row + '][contact]" required></div></div>';
     $html += '<div class="col-md-4 col-sm-4"><div class="form-group"><input type="text" class="form-control birthdate" placeholder="Birth Date" data-field="date" name="contacts[' + row + '][dob]" readonly><div id="dtBox"></div>';
     $html += '<a href="javascript:void(0)" class="remove-input" onclick="$(\'#row_' + row + '\').remove();"><i class="icon ion-ios-minus"></i></a></div></div>';
     $html += '</div></div>';
@@ -180,19 +209,30 @@ function addRow() {
 
 function getStates() {
     sendRequest(API_URL + 'get_states').done(function (response) {
-        var select = '';
+        var select = '<option value>-- Select State --</option>';
         $.each(response, function (value, text) {
-            select += '<option value="' + text.id + '">' + text.state + '</option>';
+            select += '<option value="' + text.state + '" data-id="' + text.id + '">' + text.state + '</option>';
         });
         $('#state').html(select);
     }).error(function (error) {
     });
 }
 function getCities() {
-    var state = $('#state').val();
-    sendRequest(API_URL + 'get_cities', {state_id: state}, null, null, null, null, 'html').done(function (option) {
+    var state_id = $('option:selected', '#state').attr('data-id');
+    sendRequest(API_URL + 'get_cities', {state_id: state_id}, null, null, null, null, 'html').done(function (option) {
         $('#city').html(option);
     }).error(function (jqXhr, Exception) {
     });
+}
 
+
+function notification() {
+    var session_id = getStorageData('session_id');
+    sendRequest(API_URL + 'notification', {session_id: session_id})
+        .done(function (response) {
+            $('.notification-count').text(response.count);
+        })
+        .error(function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(errorThrown);
+        });
 }

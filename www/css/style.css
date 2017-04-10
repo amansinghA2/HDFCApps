@@ -1,21 +1,66 @@
-body{background: #EEEEEE;
-font-family: 'Lato', sans-serif;}
-.clear{clear:both;}
-p{margin: 0px;}
-a,button{outline: none;}
-a:active {color: white;}
-ul{list-style: none;}
-.pad0{padding: 0px;}
-.pad8{padding: 8px;}
-.logo {text-align: center;margin: 50px 0px;float: left;width: 100%;}
-.login-form {float: left;width: 100%;}
-.login-heading {margin-bottom: 40px;}
-.login-heading h4 {margin-top: 0px;font-family: 'Lato', sans-serif;font-weight: 600;
-    color: #403C3C;}
+body {
+    background: #EEEEEE;
+    font-family: 'Lato', sans-serif;
+}
 
-.login-feild .form-group {position: relative;margin-bottom: 40px;}
+.clear {
+    clear: both;
+}
 
-.login-feild .form-group input {    font-size: 13px;
+p {
+    margin: 0px;
+}
+
+a, button {
+    outline: none;
+}
+
+a:active {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.pad0 {
+    padding: 0px;
+}
+
+.pad8 {
+    padding: 8px;
+}
+
+.logo {
+    text-align: center;
+    margin: 50px 0px;
+    float: left;
+    width: 100%;
+}
+
+.login-form {
+    float: left;
+    width: 100%;
+}
+
+.login-heading {
+    margin-bottom: 40px;
+}
+
+.login-heading h4 {
+    margin-top: 0px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    color: #403C3C;
+}
+
+.login-feild .form-group {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.login-feild .form-group input {
+    font-size: 13px;
     padding: 0px 10px 0px 35px;
     width: 100%;
     height: 39px;
@@ -25,15 +70,30 @@ ul{list-style: none;}
     outline: none;
 }
 
-<style type="text/css">
 *:not(input):not(textarea) {
     -webkit-user-select: none; /* disable selection/Copy of UIWebView */
     -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
 }
-</style>
 
-.login-feild .login-input:before {content: "";position: absolute;bottom: 0;height: 8px;width: 1px;background: gray;}
-.login-feild .login-input:after {content: "";position: absolute;right: 0;bottom: 0;height: 8px;width: 1px;background: gray;}
+.login-feild .login-input:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 8px;
+    width: 1px;
+    background: gray;
+}
+
+.login-feild .login-input:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    width: 1px;
+    background: gray;
+}
+
 .login-feild .form-group i {
     position: absolute;
     top: 4px;
@@ -41,17 +101,36 @@ ul{list-style: none;}
     font-size: 21px;
     color: #989696;
 }
-.login-feild .form-group button {width: 100%;background: red;border: none;color: white;font-size: 17px;border-radius: 40px;padding: 10px;margin-top: 10px;
+
+.login-feild .form-group button {
+    width: 100%;
+    background: red;
+    border: none;
+    color: white;
+    font-size: 17px;
+    border-radius: 40px;
+    padding: 10px;
+    margin-top: 10px;
 }
-.footer-login{text-align: center;}
+
+.footer-login {
+    text-align: center;
+}
+
 .footer-login p a {
-            color: red;
+    color: red;
     font-weight: 500;
     font-size: 15px;
 }
 
-.white-box{box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .05), 0 1px 4px 0 rgba(0, 0, 0, .08), 0 3px 1px -2px rgba(0, 0, 0, .2);background: white;padding: 12px; margin-bottom: 10px;    float: left;
-    width: 100%;}
+.white-box {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .05), 0 1px 4px 0 rgba(0, 0, 0, .08), 0 3px 1px -2px rgba(0, 0, 0, .2);
+    background: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    float: left;
+    width: 100%;
+}
 
 .forgot-password {
     position: fixed;
@@ -68,16 +147,18 @@ ul{list-style: none;}
 .forgot-main {
     position: relative;
     top: 37%;
-        margin: 0px 20px;
+    margin: 0px 20px;
 }
+
 .forgot-password-inner {
-            background: white;
+    background: white;
     top: 0;
     margin: auto;
     bottom: 0;
     max-width: 500px;
     position: relative;
 }
+
 .forgot-heading h4 {
     margin-top: 0px;
     font-family: 'Lato', sans-serif;
@@ -90,9 +171,10 @@ ul{list-style: none;}
 }
 
 .forgot-heading {
-        text-align: center;
+    text-align: center;
     padding-top: 41px;
 }
+
 .forgot-password-inner button {
     background: none;
     border: none;
@@ -100,10 +182,21 @@ ul{list-style: none;}
     position: absolute;
     right: 8px;
     top: 0px;
-        outline: none;
+    outline: none;
 }
 
-.forgot-heading h4:after {content: "";position: absolute;bottom: -8px;width: 24px;height: 2px;background: red;left: 0;right: 0;margin: 0 auto;}
+.forgot-heading h4:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    width: 24px;
+    height: 2px;
+    background: red;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
 .hrms-login {
     text-align: center;
     padding: 10px 0px;
@@ -114,7 +207,7 @@ ul{list-style: none;}
 }
 
 .top-strip {
-        background: #2B2B2B;
+    background: #2B2B2B;
     height: 26px;
 }
 
@@ -136,16 +229,19 @@ ul{list-style: none;}
     font-weight: 600;
     font-size: 16px;
 }
-.menu-icon{    color: white;
+
+.menu-icon {
+    color: white;
     font-size: 28px;
     margin-left: 11px;
     float: left;
     margin-right: 16px;
-margin-top: 2px;}
+    margin-top: 2px;
+}
 
 .noti-more li {
-      float: left;
-      /* padding: 7px 14px 7px 9px; */
+    float: left;
+    /* padding: 7px 14px 7px 9px; */
 }
 
 .noti-more {
@@ -180,9 +276,10 @@ margin-top: 2px;}
 .common-heading {
     margin-bottom: 15px;
 }
+
 .common-heading p {
     font-size: 16px;
-        color: black;
+    color: black;
 }
 
 .add-account-form .form-control {
@@ -193,7 +290,7 @@ margin-top: 2px;}
 
 .add-account-form .form-control.birthdate {
     width: 90%;
-        display: inline-block;
+    display: inline-block;
 }
 
 a.add-input i {
@@ -211,13 +308,19 @@ a.add-input i {
     color: white;
     font-size: 15px;
     font-weight: 600;
-        border-radius: 4px;
+    border-radius: 4px;
 }
+
 .save-close-btn {
     text-align: center;
 }
 
 .save-close-btn button:first-child {
+    background: red;
+    margin-right: 7px;
+}
+
+.save-close-btn button:nth-child(2) {
     background: red;
     margin-right: 7px;
 }
@@ -236,7 +339,7 @@ a.add-input i {
 }
 
 .noti-more ul.dropdown-menu li a {
-        color: #616060;
+    color: #616060;
     font-size: 14px;
     border-bottom: 1px solid #EEEEEE;
     display: block;
@@ -255,7 +358,7 @@ a.add-input i {
 }
 
 .notification-img {
-        float: left;
+    float: left;
     width: 65px;
     height: 65px;
     text-align: center;
@@ -298,6 +401,7 @@ a.add-input i {
 .noti-date-time p:last-child {
     float: right;
 }
+
 .noti-date-time p i {
     font-size: 18px;
     vertical-align: -2px;
@@ -313,4 +417,49 @@ a.add-input i {
     float: left;
     width: 100%;
     padding: 5px 0px;
+}
+
+.notification {
+    position: fixed;
+    width: 96%;
+    height: 42px;
+    background: rgba(0, 0, 0, 0.94);
+    z-index: 99999999;
+    top: 26px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.notifi-icon {
+    float: left;
+    height: 42px;
+    width: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 10px;
+}
+
+.error .notifi-icon {
+    background: #D60A0A;
+    color: #631A1A;
+}
+
+.success .notifi-icon {
+    background: #2BA97A;
+    color: #005233;
+}
+
+.success .notifi-icon i {
+    font-size: 27px;
+}
+
+span.message {
+    color: white;
+    line-height: 46px;
+    margin-left: 14px;
+    font-weight: bold;
 }
